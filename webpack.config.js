@@ -9,5 +9,6 @@ module.exports = {
     watch: true,
     watcherOptions: {
         aggregateTimeout: 100
-    }
+    },
+    devtool: "cheap-inline-source-map"
 };

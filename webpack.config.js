@@ -20,5 +20,11 @@ module.exports = {
             LANG: JSON.stringify('ru'),
             USER: JSON.stringify(process.env.USER)
         })
-    ]
+    ],
+    module: {
+        loaders: [{
+            test: /\.js$/,
+            loader: 'babel?optional[]=runtime'
+        }]
+    }
 };

@@ -5,5 +5,9 @@ module.exports={
     output:{
         filename:"bundle.js",
         library:"home"
+    },
+    watch:true,
+    watcherOptions:{
+        aggregateTimeout:100
     }
 };

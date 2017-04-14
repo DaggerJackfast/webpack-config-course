@@ -6,14 +6,12 @@ const path = require('path');
 module.exports = {
     context: path.resolve(__dirname, 'frontend'),
     entry: {
-        home: "./home",
-        about: "./about",
-        common:["./common","./welcome"]
+        app:'./app'
     },
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: __dirname + '/public/js',
+        publicPath:'/js/',
         filename: "[name].bundle.js",
-        library: "[name]"
     },
     watch: NODE_ENV == "development",
     watchOptions: {
@@ -22,15 +20,6 @@ module.exports = {
     devtool: NODE_ENV == "development" ? "cheap-inline-module-source-map" : null,
     plugins: [
         new webpack.NoErrorsPlugin(),
-        new webpack.DefinePlugin({
-            NODE_ENV: JSON.stringify(NODE_ENV),
-            LANG: JSON.stringify('ru'),
-            USER: JSON.stringify(process.env.USER)
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "common",
-            minChunks: ['about','home']
-        })
     ],
     resolve: {
         moduleDirectories: ['node_modules'],

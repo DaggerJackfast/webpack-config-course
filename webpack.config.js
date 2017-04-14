@@ -21,6 +21,15 @@ module.exports = {
             USER: JSON.stringify(process.env.USER)
         })
     ],
+    resolve:{
+        moduleDirectories:['node_modules'],
+        extensions:['','.js']
+    },
+    resolveLoader:{
+        moduleDirectories:['node_modules'],
+        moduleTemplates:['*-loader'],
+        extensions:['','.js']
+    },
     module: {
         loaders: [{
             test: /\.js$/,

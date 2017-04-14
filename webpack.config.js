@@ -7,7 +7,8 @@ module.exports = {
     context: path.resolve(__dirname, 'frontend'),
     entry: {
         home: "./home",
-        about: "./about"
+        about: "./about",
+        common:["./common","./welcome"]
     },
     output: {
         path: path.resolve(__dirname, 'public'),

@@ -25,6 +25,9 @@ module.exports = {
             NODE_ENV: JSON.stringify(NODE_ENV),
             LANG: JSON.stringify('ru'),
             USER: JSON.stringify(process.env.USER)
+        }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name:"common"
         })
     ],
     resolve: {

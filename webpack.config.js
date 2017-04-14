@@ -4,7 +4,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development';
 const webpack = require('webpack');
 const path = require('path');
 module.exports = {
-    context:path.resolve(__dirname, 'frontend'),
+    context: path.resolve(__dirname, 'frontend'),
     entry: {
         home: "./home",
         about: "./about"
@@ -27,7 +27,8 @@ module.exports = {
             USER: JSON.stringify(process.env.USER)
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name:"common"
+            name: "common",
+            minChunks: ['about','home']
         })
     ],
     resolve: {
